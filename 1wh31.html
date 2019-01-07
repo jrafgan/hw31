@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var Salary = {
+        salaries: { 'Vasiliy': 100, 'Piotr': 300, 'Daria': 250, 'IsPaid': false },
+        countSalary: function() {
+            var sum = 0;
+            for (var key in this.salaries) {
+                var num = parseInt(this.salaries[key]);
+                if (isNaN(num)) {
+                    continue;
+
+                } else {
+                    sum += num;
+                }
+            }
+            return sum;
+        },
+    };
+    Salary.countSalary();
+
+    </script>
+</body>
+
+</html>

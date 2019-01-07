@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var rand = Math.round(1 - 0.5 + Math.random() * (7 - 1 + 1));
+    var j = 1;
+    console.log(rand);
+
+    while (true) {
+        var num = prompt('Guess a number between 1 -> 7');
+        var num1 = parseInt(num);
+
+        if (num === null || j === 3) {
+            alert('Game Over!' + '\nThe number was : ' + rand);
+            break;
+        }
+        if (num1 < 1 || num1 > 7 || isNaN(num1)) {
+            alert('You\'ve entered illegal symbol');
+            continue;
+        }
+        if (num1 >= 1 && num1 <= 7 && num1 != rand) {
+            alert('Try again');
+            j++;
+            continue;
+        }
+        alert('Congratulaton! You Win!');
+        break;
+    }
+
+    </script>
+</body>
+
+</html>

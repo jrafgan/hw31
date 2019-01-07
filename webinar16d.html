@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var getRandomNumberFrom1To36 = function() {
+        return Math.floor(Math.random() * 36 + 1);
+    };
+    var getRandomNumbers = function(count) {
+        var numbers = [];
+        //var tryCount = 0;
+        while (numbers.length !== count) {
+            var newNumber = getRandomNumberFrom1To36();
+            var isNewNumber = numbers.indexOf(newNumber) === -1;
+            /*for (var i = 0; i < numbers.legth; i++) {
+                var existingNumber = numbers[i];
+                if (newNumber === existingNumber) {
+                    numberExists = true;
+                }
+            }*/
+            if (isNewNumber) {
+                numbers.push(newNumber);
+            }
+            //tryCount++;
+            return numbers;
+            //numbers.push(getRandomNumberFrom1To36());
+        }
+    };
+    var initialNumbers = getRandomNumbers(5); 
+    console.log('Initial numbers: ', initialNumbers);
+    //console.log('TotalTries : ' + tryCount);
+    var numberOfDraws = 0;
+    while (true) {
+        numberOfDraws++;
+        var drawNumbers = getRandomNumbers(5);
+        var matches = 0;
+        for (var i = 0; i < initialNumbers.length; i++) {
+
+            var currentInitialNumber = initialNumbers[i];
+            for (var j = 0; j < drawNumbers.length; j++) {
+                var currentDrawnumber = drawNumbers[j];
+                if (currentInitialNumber === currentDrawnumber) {
+                    matches++;
+                }
+            }
+        }
+        if (matches === 5) {
+            console.log('Win draw');
+            break;
+        }
+    };
+
+    console.log('Total draws taken : ', numbersOfDraws);
+
+    </script>
+</body>
+
+</html>

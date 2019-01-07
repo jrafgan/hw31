@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    i = 0;
+    k = 0;
+
+    var wordList = ['Bruce', 'Donald', 'Obama', 'Joe'];
+    var letter = prompt('Enter a letter to find');
+    console.log(wordList[i]);
+    var emptyWord = '';
+    var word = wordList[i];
+    while (i <= word.length) {
+        var j = word.charAt(i);
+        if (j !== letter) {
+            emptyWord += '_';
+            i++;
+        } else if (j === letter) {
+            emptyWord += ;
+            k++;
+        }
+    }
+    console.log(emptyWord, wordList[i]);
+</script>
+</body>
+</html>
