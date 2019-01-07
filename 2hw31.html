@@ -16,13 +16,11 @@
             var num = parseInt(numbers[key]);
             var result = num % 2
 
-            if (num != NaN && result === 0) {
+            if (!isNaN(num) && result === 0) {
                 sum += num;
-            } else {
-                continue;
             }
         }
-        return sum;
+        console.log('Even numbers total is : ', sum);
     };
     count();
 
